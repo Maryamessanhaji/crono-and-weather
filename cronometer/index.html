@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cronometer</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgray;
+      }
+
+      .container {
+        width: 25vw;
+        height: 25vw;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      #buttons button {
+        margin-top: 31px;
+        padding: 10px 20px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+        #start {
+          background-color: red;
+        }
+        #stop {
+          background-color: green;
+        }
+        #reset {
+          background-color: black;
+        }
+
+      #buttons button:hover {
+        background-color: lightblue;
+      }
+      #historique {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Cronometer</h1>
+      <div id="time">
+        <span class="digit" id="hr"> 10</span>
+        <span class="txt">Hr</span>
+        <span class="digit" id="min"> 00</span>
+        <span class="txt">Min</span>
+        <span class="digit" id="sec"> 20</span>
+        <span class="txt">Sec</span>
+  
+      </div>
+      <div id="buttons">
+        <button class="btn" id="start">Start</button>
+        <button class="btn" id="stop">Stop</button>
+        <button class="btn" id="reset" onclick="reset()">Reset</button>
+      </div>
+      <div id="historique">
+        <span>00:66:88:00</span>
+        <span>00:66:88:00</span>
+        <span>00:66:88:00</span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
