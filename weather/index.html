@@ -1,107 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>weather</title>
-    <style>
-      body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
 
-      .container {
-        width: 25vw;
-        height: 25vw;
-        /* border-radius: 50%; */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-      label {
-        font-size: 25px;
-        margin-bottom: 20px;
-      }
-      #temp {
-        padding: 6px;
-        border-radius: 3px;
-      }
-      #btn {
-        margin-top: 31px;
-        padding: 10px 20px;
-        border: none;
-        color: black;
-        background-color: aquamarine;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-      select {
-        padding: 6px;
-        border-radius: 3px;
-      }
-      #demo {
-        font-size: 26px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <label>choose temperature unit </label>
-      <div>
-        <input type="text" id="temp" placeholder="Enter temperature" />
-        <select name="unit" id="unit">
-          <option value="celsius ">celsius</option>
-          <option value="fahrenheit">fahrenheit</option>
-        </select>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>weather</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      <input type="submit" id="btn" value="Submit" onclick="weather()" />
+    .container {
+      width: 25vw;
+      height: 25vw;
+      /* border-radius: 50%; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-      <p id="demo"></p>
+    label {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    #temp {
+      padding: 6px;
+      border-radius: 3px;
+    }
+
+    #btn {
+      margin-top: 31px;
+      padding: 10px 20px;
+      border: none;
+      color: black;
+      background-color: aquamarine;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    select {
+      padding: 6px;
+      border-radius: 3px;
+    }
+
+    #demo {
+      font-size: 26px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <label>choose temperature unit </label>
+    <div>
+      <input type="number" id="temp" placeholder="Enter temperature" />
+      <select name="unit" id="unit">
+        <option value="celsius ">celsius</option>
+        <option value="fahrenheit">fahrenheit</option>
+      </select>
     </div>
-    <script>
-      //     Cold: Below 15°C (59°F)
 
-      // Cool: Between 15°C - 22°C (59°F - 72°F)
+    <input type="submit" id="btn" value="Submit" onclick="weather()" />
+    <p id="demo"></p>
+    <p id="tempc"></p>
+  </div>
+  <script src="script.js">
 
-      // Warm: Between 23°C - 29°C (73°F - 84°F)
+   
+  </script>
+</body>
 
-      // Hot: Above 30°C (86°F)
-      function weather() {
-        let temp = document.getElementById("temp").value;
-        if (temp > 30) {
-          document.getElementById("demo").innerHTML = "Hot 🥵";
-        } else if (temp >= 15 && temp <= 22) {
-          document.getElementById("demo").innerHTML = "Cool ☀️ ";
-        } else if (temp >= 23 && temp <= 29) {
-          document.getElementById("demo").innerHTML = "Warm 😀 ";
-        } else if (temp < 15) {
-          document.getElementById("demo").innerHTML = "Cold 🥶";
-        } else {
-          document.getElementById("demo").innerHTML = " ";
-        }
-
-        // let unit = document.getElementById("unit").value;
-        // // Adjust the temperature based on unit (if needed)
-        // if (unit === "Celsius") {
-        //   temp = temp * (9 / 5) + 32; // Convert Fahrenheit to Celsius
-        //   return (unit.innerHTML = temp);
-        // }
-
-        // if (unit === "celsius") {
-        //   document.getElementById("demo").innerHTML += ` (${tempInCelsius.toFixed(1)}°C)`;
-        // } else {
-        //   let tempInFahrenheit = (tempInCelsius * 9) / 5 + 32;
-        //   document.getElementById("demo").innerHTML += ` (${tempInFahrenheit.toFixed(1)}°F)`;
-        // }
-      }
-      
-    </script>
-  </body>
 </html>
